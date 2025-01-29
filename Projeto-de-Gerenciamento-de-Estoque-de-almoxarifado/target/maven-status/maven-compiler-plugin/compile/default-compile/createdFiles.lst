@@ -1,0 +1,5 @@
+com\example\Projeto\de\Gerenciamento\de\Estoque\de\almoxarifado\CONTROLLER\ProdutosController.class
+com\example\Projeto\de\Gerenciamento\de\Estoque\de\almoxarifado\SERVICE\ProdutosService.class
+com\example\Projeto\de\Gerenciamento\de\Estoque\de\almoxarifado\MODELS\Produtos.class
+com\example\Projeto\de\Gerenciamento\de\Estoque\de\almoxarifado\ProjetoDeGerenciamentoDeEstoqueDeAlmoxarifadoApplication.class
+com\example\Projeto\de\Gerenciamento\de\Estoque\de\almoxarifado\REPOSITORY\ProdutosRepository.class
