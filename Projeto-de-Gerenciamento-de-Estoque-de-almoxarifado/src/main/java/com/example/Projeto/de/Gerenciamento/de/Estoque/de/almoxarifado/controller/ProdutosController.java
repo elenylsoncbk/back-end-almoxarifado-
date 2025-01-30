@@ -16,17 +16,19 @@ public class ProdutosController {
     private ProdutosService service;
 
 
-    @Operation(summary = "Realiza o upload do arquivo", method = "POST")
+    @Operation(summary = "REALIZA O UPLOAD", method = "POST")
     @PostMapping
     public ResponseEntity<Produtos> salvar(@RequestBody Produtos produtos){
         return ResponseEntity.status(HttpStatus.CREATED).body(service.salvar(produtos))  ;
     }
 
+    @Operation(summary = "bUSCA TODOS", method = "GET")
     @GetMapping
     public List<Produtos> listar(){
         return service.listar();
     }
 
+    @Operation(summary = "BUSCAR POR ID", method = "GET")
     @GetMapping("/{id}")
     public ResponseEntity<?> obterPorId(@PathVariable("id")Integer id){
         try {
@@ -35,25 +37,23 @@ public class ProdutosController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado!");
         }
     }
-
     @PutMapping
     public ResponseEntity<String>semPut(){
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body("Metodo não permitido");
     }
+    @Operation(summary = "ALTERA AS INFORMAÇOES", method = "PUT")
     @PutMapping("/{id}")
     public Produtos editar(@PathVariable("id") Integer id,@RequestBody Produtos produtos){
         return service.editar(id, produtos);
 
     }
-    //    @DeleteMapping("/{id}")
-    //    public void deletar(@PathVariable("id")Integer id){
-//        service.deletar(id);
-//    }
+
     @DeleteMapping
     public ResponseEntity<String>semDelete(){
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body("Metodo não permitido");
     }
 
+    @Operation(summary = "DELETA POR ID", method = "DELETE")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletar(@PathVariable("id")String id){
         int idInt;
